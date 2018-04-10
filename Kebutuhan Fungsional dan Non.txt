@@ -1,0 +1,19 @@
+Sistem Informasi Kepolisian mengenai Kehilangan Barang dan Orang
+
+Kebutuhan Fungsional
+1. User dapat mengimputkan data seseorang yang dicari
+2. User dapat mengimputkan data barang yang dicari
+3. Admin dapat menanggapi daftar kehilangan
+4. Sistem menyediakan fitur yang memungkinkan user dapat mengimputkan data dan 
+   melihat informasi orang atau barang hilang
+5. Sistem dapat menyimpan data di database
+6. Sistem dapat menampilkan informasi terbaru mengenai status barang atau orang 
+   hilang (sudah ditemukan atau belum)
+
+
+Kebutuhan Non Fungsional
+1. Sistem dapat dijalankan oleh beberapa software web browser diantaranya 
+   Internet Explore, Google Chrome, dan Mozilla Firefox
+2. Sistem harus dapat memastikan bahwa data yang digunakan dalam sistem harus
+   terlindungi dari akses yang tidak berwenang
+3. Sistem memiliki tampilan (antar muka) yang mudah dipahami
