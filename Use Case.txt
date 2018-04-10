@@ -1,0 +1,53 @@
+USE CASE
+
+Sistem Informasi Kepolisian mengenai Kehilangan Barang dan Orang
+
+User/Actor : Polisi, Pelapor
+
+Polisi :
+~ Melakukan pengecekan data
+~ Mengubah status laporan barang atau orang hilang (sudah ditemukan atau belum)
+~ Mengirimkan notifikasi mengenai keputusan akhir dari laporan yang dikirim
+
+Pelapor :
+~ Mengisi data diri pelapor
+~ Mengisi data barang hilang
+~ Mengisi data orang hilang
+
+
+Use Case 1
+1. Use case name        : Pengecekan data barang atau orang hilang
+2. Actor                : Polisi
+3. Use case description : Polisi melakukan pengecekan data yang dilakukan pelapor
+3. Trigger              : Polisi membutuhkan validasi sebagai admin
+4. Pre-condition        :
+   ~ Polisi memiliki username password
+   ~ Sistem aktif atau online
+5. Normal Course        :
+   ~ Polisi memasukkan username dan password
+   ~ Sistem menccocokan username dan password
+   ~ Sistem menampilkan data
+   ~ Polisi melakukan pengecekan data pelapor
+6. Post Condition       : Polisi mengetahui data-data pelapor
+7. Exception            : 
+   ~ Polisi gagal login
+   ~ Sistem offline
+
+
+Use Case 2
+1. Use case name        : Pengisisan data diri pelapor
+2. Actor                : Pelapor
+3. Use case description : Pelapor melakukan pengisian data diri
+3. Trigger              : Pelapor membutuhkan validasi untuk membuat laporan 
+                          kehilangan barang atau orang
+4. Pre-condition        :
+   ~ Sistem aktif atau online
+5. Normal Course        :
+   ~ Pelapor memasukkan data diri
+   ~ Sistem menyimpan data diri pelapor
+6. Post Condition       : 
+   ~ Pelapor masuk ke dalam form pengisian data barang yang hilang
+   ~ Pelapor masuk ke dalam form pengisian data orang yang hilang
+7. Exception            : 
+   ~ Sistem offline
+  
