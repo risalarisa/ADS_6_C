@@ -1,0 +1,21 @@
+SISTEM REQUEST
+
+"Sistem Informasi Kepolisian mengenai Kehilangan Barang dan Orang"
+
+1. Project Sponsor : Kepolisian
+
+2. Bussiness Needs :
+   ~ Mempermudah masyarakat dalam menemukan barang atau orang yang hilang
+
+3. Bussiness Requirement :
+   ~ Fasilitas register
+   ~ Fasilitas pencarian barang
+   ~ Fasilitas penemuan barang
+   ~ Fasilitas pencarian orang
+   ~ Fasilitas penemuan orang
+
+4. Bussiness Value :
+   ~ Membuat pelayanan polisi kepada masyarakat lebih efektif
+
+5. Special Issues :
+   ~ Sistem dibangun berbasis teknologi mobile 
