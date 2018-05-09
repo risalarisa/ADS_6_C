@@ -1,0 +1,1058 @@
+
+SKPL-06
+
+
+
+
+SPESIFIKASI KEBUTUHAN PERANGKAT LUNAK
+
+
+
+
+Sistem Informasi Pencarian Orang dan Barang Hilang
+
+
+
+
+untuk:
+
+Kepolisian Indonesia
+
+
+
+
+Dipersiapkan oleh:
+
+Grup 06
+
+150535601749 / Reski Dwi Suciati
+
+150535604362 / Ridhwan Shalahuddin
+
+150535600647 / Risalatul Mu'awanah
+
+
+
+Program Studi Teknik Informatika/Analisis dan Desain Sistem
+
+Universitas Negeri Malang
+
+ Jl. Semarang No.5, Sumbersari, Kec. Lowokwaru, Kota Malang, Jawa Timur
+
+
+
+	Program Studi Teknik	NomorDokumen	Halaman
+				
+				
+	Informatika / Analisis dan	SKPL-06	01
+	  Desain Sistem		
+	TI-UM	Revisi		Tgl: 10 April 2018
+				
+
+ 
+DAFTAR PERUBAHAN
+
+
+Revisi	Deskripsi
+
+A
+
+
+
+B
+
+
+
+C
+
+
+
+
+D
+
+
+
+
+E
+
+
+
+
+F
+
+
+
+
+G
+
+
+
+
+
+
+
+
+INDEX	-	A	B	C	D	E	F	G
+TGL								
+Ditulis								
+oleh								
+								
+Diperiksa								
+oleh								
+								
+Disetujui								
+oleh								
+								
+
+
+
+
+
+
+
+
+Program Studi Teknik Informatika	SKPL-06	Halaman 2 dari 23 halaman
+
+ 
+Daftar Halaman Perubahan
+
+
+Halaman	Revisi	Halaman	Revisi
+			
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Program Studi Teknik Informatika	SKPL-06	Halaman 3 dari 23 halaman
+
+ 
+			Daftar Isi	
+1. Pendahuluan ........................................................................................................................................................	7
+	1.1	Tujuan Penulisan Dokumen .....................................................................................................................	7
+	1.2	Lingkup Masalah .....................................................................................................................................	7
+	1.3	Definisi, Istilah dan Singkatan ................................................................................................................	7
+	1.4	Aturan Penomoran ...................................................................................................................................	7
+	1.5	Referensi ..................................................................................................................................................	8
+	1.6	Deskripsi umum Dokumen (Ikhtisar) ......................................................................................................	8
+2	Deskripsi Umum Perangkat Lunak ..................................................................................................................	9
+	2.1	Deskripsi Umum Sistem ..........................................................................................................................	9
+	2.2	Karakteristik Pengguna..........................................................................................................................	10
+	2.3	Batasan ..................................................................................................................................................	10
+	2.4	Lingkungan Operasi ..............................................................................................................................	10
+3	Deskripsi Kebutuhan .....................................................................................................................................	11
+	3.1	Kebutuhan Antarmuka Eksternal ...........................................................................................................	11
+	3.1.1	Antarmuka pemakai .......................................................................................................................	11
+	3.1.2	Antarmuka Perangkat Keras ..........................................................................................................	11
+	3.1.3	Antarmuka Perangkat Lunak .........................................................................................................	11
+	3.1.4	Antarmuka Komunikasi .................................................................................................................	12
+	3.2	Kebutuhan Fungsional ...........................................................................................................................	12
+	3.2.1	Diagram Konteks ...........................................................................................................................	15
+	3.2.2	DFD Level 1 ..................................................................................................................................	15
+		3.2.2.1   DFD Level 2 <Proses pendaftaran>...........................................................................................	16
+		3.2.2.2   DFD Level 2 <Proses lihat dan update katalog> .......................................................................	16
+		3.2.2.2   DFD Level 2 <Proses pemesanan> ............................................................................................	17
+		3.2.2.2   DFD Level 2 <Proses pembayaran> ..........................................................................................	17
+		3.2.2.2   DFD Level 2 <Proses permintaan produk> ...............................................................................	18
+		3.2.2.2   DFD Level 2 <Generate laporan> .............................................................................................	18
+	3.2.3	Spesifikasi Proses ..........................................................................................................................	18
+	3.2.4	Data Store ......................................................................................................................................	
+	3.3	Kebutuhan Data .....................................................................................................................................	20
+	3.3.1	E-R diagram ...................................................................................................................................	20
+	3.4	Kebutuhan Non Fungsional ...................................................................................................................	20
+	3.5	Batasan Perancangan .............................................................................................................................	21
+	3.6	Kerunutan (traceability) .........................................................................................................................	21
+	3.6.1	Data Store vs E-R ..........................................................................................................................	21
+	3.7	Ringkasan Kebutuhan ............................................................................................................................	21
+	3.7.1	Kebutuhan Fungsional ...................................................................................................................	22
+	3.7.2	Kebutuhan Non Fungsional ...........................................................................................................	23
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Program Studi Teknik Informatika	SKPL-04	Halaman 4 dari 23 halaman
+
+ 
+
+
+
+Daftar Gambar
+
+Gambar 1. Hubungan sistem dengan dunia luar	9
+Gambar 2. Diagram konteks SI Transaksi SMM	14
+Gambar 3. Diagram Level 1 SI Transaksi SMM	15
+
+Gambar 4. Diagram Level 2 Proses pendaftaran	16
+Gambar 5. Diagram Level 2 Proses lihat dan update katalog	16
+Gambar 6. Diagram Level 2 Proses Pemesanan	17
+Gambar 7. Diagram Level 2 Proses Pembayaran	17
+Gambar 8. Diagram Level 2 Proses Permintaan produk	18
+Gambar 9. Diagram Level 2 Proses Generate laporan	18
+
+Gambar 10. Diagram ER	20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Program Studi Teknik Informatika	SKPL-04	Halaman 5 dari 23 halaman
+
+ 
+Daftar Tabel
+
+Tabel 1 Definisi, istilah dan singkatan	7
+Tabel 2 Aturan penomoran	7
+Tabel 3 Karakteristik pengguna	10
+Tabel 4 Kebutuhan fungsional	12
+Tabel 5 Spesifikasi Proses	18
+Tabel 6 Data Store	
+Tabel 7 Kebutuhan non fungsional	20
+
+Tabel 8 Kebutuhan Fungsional vs proses	21
+Tabel 9 Data Store vs E-R	22
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Program Studi Teknik Informatika	SKPL-04	Halaman 6 dari 23 halaman
+
+ 
+1. Pendahuluan
+
+1.1	Tujuan Penulisan Dokumen
+
+Dokumen ini ditulis dalam rangka menjabarkan spesifikasi kebutuhan perangkat lunak yang akan digunakan oleh Kepolisian Indonesia. Penjabaran spesifikasi perangkat lunak meliputi deskripsi umum perangkat lunak dan deskripsi kebutuhan perangkat lunak. Perangkat lunak yang akan dibangun untuk Kepolisian Indonesia bernama Sistem Pencarian Orang dan Barang Hilang. Dalam rangka membangun perangkat lunak tersebut, tentunya spesifikasi kebutuhan untuk perangkat lunak tersebut dibutuhkan, khususnya oleh para pengembang dan pembangun perangkat lunak tersebut.
+
+1.2	Lingkup Masalah
+
+Sistem Pencarian Orang dan Barang Hilang merupakan aplikasi berbasis web yang digunakan untuk mempermudah pencarian orang maupun barang yang hilang. Sistem di dalam Super Monster Mall disebut dengan M_Monster System. Pengguna perangkat lunak dapat melakukan pengisian data orang hilang, pengisian data barang hilang, dan pengisian data diri pelapor. Sistem ini dikelola oleh seorang admin yang bertugas memperbaharui mengirimkan nitifikasi, mengubah status (barang atau orang hilang sudah ditemukan atau belum), pengecekan data barang hilang, dan pengecekan data orang hilang. Data-data yang dikelola admin dipertanggungjawabkan kepada Kepolisian Indonesia di mana seorang manajer dari Kepolisian Indonesia akan mengunjungi Sistem Pencarian Orang dan Barang Hilang dan melakukan observasi serta meminta laporan pertanggungjawaban.
+
+
+1.3	Definisi, Istilah dan Singkatan
+
+Berikut definisi, istilah serta singkatan yang digunakan dalam dokumen ini :
+
+Tabel 1 Definisi, istilah dan singkatan
+Definisi, Istilah	Penjelasan
+dan/atau Singkatan	
+	
+	
+DFD	Data Flow Diagram. Diagram yang menggambarkan aliran data.
+ERD	Entity Relationship Diagram. Diagram yang menggambarkan entitas suatu
+	objek beserta relasinya.
+Interface	Antarmuka antara perangkat lunak dan pengguna
+Data store	Tempat penyimpanan data
+
+
+1.4	Aturan Penomoran
+
+Dalam dokumen ini, terdapat beberapa aturan penomoran yang dipakai. Untuk daftar penamaan perangkat lunak dijelaskan pada tabel dibawah ini :
+
+Tabel 2 Aturan penomoran
+Nama-ID	Aturan penamaan			Deskripsi
+Kebutuhan fungsional	SRS-F-IN/PR/OUT-xxx		SRS adalah System Requirement Summary,
+			F adalah Fungsional
+			IN menunjukkan operasi Input
+			PR menunjukkan operasi Proses
+			OUT menunjukkan output
+			xxx adalah nomor SRS-Id.
+Program Studi Teknik Informatika	SKPL-06	Halaman 7 dari 23 halaman
+
+
+ 
+Kebutuhan	SRS-NF-IN/PR/OUT-xxx	SRS adalah System Requirement Summary
+non fungsional		NF adalah non-Fungsional
+		IN menunjukkan operasi Input
+		PR menunjukkan operasi Proses
+		OUT menunjukkan operasi Output
+		xxx adalah nomor SRS-Id.
+Bubble	DFD-X-Y.Z	DFD adalah Data Flow Diagram
+		X adalah nomor level diagram
+		Y.Z adalah nomer pada buble diagram
+
+
+1.5	Referensi
+
+Dokumen ini memiliki beberapa referensi dalam pembuatannya, yaitu sebagai berikut:
+
+IEEE. 98. IEEE Recommended Practice for Software Requirement Specification. New York : IEEE
+
+Pressman, Roger S. 2001. Software engineering: a practitioner’s approach 5th ed. New York : McGraw-Hill Companies, Inc.
+
+1.6	Deskripsi umum Dokumen (Ikhtisar)
+
+Dokumen Spesifikasi Kebutuhan Perangkat Lunak (SKPL) ini berisikan beberapa bagian besar, antara lain pendahuluan, deskripsi umum perangkat lunak, dan deskripsi kebutuhan.
+
+Bagian pendahuluan berisi tujuan penulisan dokumen yang menjelaskan alasan dokumen ini dibuat, lingkup masalah yang berisi ringkasan deskripsi dari aplikasi yang akan dibuat, definisi, istilah dan singkatan yang digunakan dalam dokumen, aturan penomoran yang digunakan dalam dokumen ini, referensi yang dirujuk oleh dokumen dan ikhtisar dokumen ini.
+
+Bagian deskripsi umum perangkat lunak berisi deskripsi umum dari sistem yang dibuat, karakteristik pengguna sistem, batasan yang dipakai dalam perangkat lunak itu sendiri, dan lingkungan operasi yang diperuntukan bagi perangkat lunak yang dibuat.
+
+Bagian deskripsi kebutuhan di dalam dokumen ini meliputi kebutuhan antarmuka eksternal, kebutuhan fungsional, kebutuhan non fungsional, kebutuhan data, batasan perancangan perangkat lunak, keruntunan, dan ringkasan dari kebutuhan perangkat lunak, baik itu kebutuhan fungsional maupun kebutuhan non fungsional. Kebutuhan antarmuka eksternal meliputi antarmuka pemakai, antarmuka perangkat keras, antarmuka perangkat lunak, dan antarmuka komunikasi. Kebutuhan fungsional dan kebutuhan non fungsional perangkat lunak diuraikan dengan lengkap di bagian ini dan ringkasan dari kebutuhan perangkat lunak yang dibuat disertakan dalam dokumen ini. Kebutuhan fungsional perangkat lunak digambarkan dalam bentuk Data Flow Diagram (DFD), di mana DFD yang dibuat meliputi diagram konteks, DFD level 1, dan DFD level 2. Data store dari DFD yang dibuat pun dijelaskan di dalam dokumen ini. Selain DFD, kebutuhan fungsional perangkat lunak digambarkan dalam spesifikasi proses. Kebutuhan data dari perangkat lunak digambarkan dalam Entity Relationship Diagram (E-R Diagram). Batasan perancangan dari perangkat lunak yang akan dibuat tentunya harus dijelaskan dalam dokumen ini agar pengembang perangkat lunak lebih mudah dalam melakukan pekerjaannya. Keruntunan dari perangkat lunak yang dibuat digambarkan dengan cara mapping kebutuhan fungsional dengan proses pada DFD dan mapping data store DFD dengan Entity-Relationship Diagram.
+
+
+
+
+
+Program Studi Teknik Informatika	SKPL-06	Halaman 8 dari 23 halaman
+ 
+2	Deskripsi Umum Perangkat Lunak
+
+2.1	Deskripsi Umum Sistem
+
+Sistem Pencarian Orang dan Barang Hilang merupakan aplikasi berbasis web yang digunakan untuk mempermudah pencarian orang maupun barang yang hilang. Pengguna aplikasi dapat melakukan pengisian data orang hilang untuk melakukan pencarian orang hilang. Pengguna aplikasi dapat melakukan pengisian data barang hilang untuk melakukan pencarian barang yang hilang. Pengguna aplikasi harus melakukan pengisian data diri untuk melaporkan orang atau barang yang hilang. Pengguna aplikasi akan menerima notifikasi dari admin mengenai status orang atau barang yang dilaporkan apakah sudah ditemukan atau belum atau tidak ditemukan. 
+
+Sistem ini dikelola oleh seorang admin yang bertugas mengirimkan notifikasi kepada pengguna aplikasi, mengubah status orang atau barang yang dilaporkan apakah sudah ditemukan, belum ditemukan atau tidak ditemukan, dan melakukan pengecekan terhadap data orang atau barang yang dilaporkan pengguna aplikasi. Data-data ini dipertanggungjawabkan kepada Kepolisian Indonesia kepada manajer dari Kepolisian Indonesia dalam bentuk laporan pertanggungjawaban. Laporan ini akan dicetak apabila manajer meminta laporan tersebut melalui admin. Admin akan melakukan permintaan generate laporan kepada aplikasi.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gambar 1. Hubungan sistem dengan dunia luar
+
+
+Program Studi Teknik Informatika	SKPL-06	Halaman 9 dari 23 halaman
+
+ 
+2.2	Karakteristik Pengguna
+
+Tabel 3 Karakteristik pengguna
+KategoriPengguna	Tugas	Hak Akses ke aplikasi
+Guest	Melihat tampilan web	-
+Pelapor	Melaporkan orang atau barang hilang dan pengisian data diri pelapor	Mengisi data orang tau barang yang dilaporkan hilang dan melakukan pengisian data pelapor 
+Admin	Mengirim notifikasi, mengubah status dan melakukan pengecekan orang atau barang yang telah dilaporkan pengguna aplikasi	Sign ini sebagai admin
+		
+
+2.3	Batasan
+
+Dalam pembuatan perangkat lunak ini, ada beberapa batasan yang digunakan. Batasan-batasan tersebut antara lain :
+
+1.	Pelaporan orang atau barang hilang hanya dapat dilakukan apabila pengguna sudah melakukan pengisian data diri pelapor.
+
+2.	Pelapor harus tercatat sebagai warga negara indonesia, apabila yang kehilangan adalah warga negara asing maka harus meminta bantuan kepada WNI untuk melaporkan orang atau barang hilang tersebut.
+
+3.	WNI yang ingin melaporkan orang atau barang yang hilang harus memiliki Kartu Tanda Penduduk (KTP).
+
+2.4	Lingkungan Operasi
+
+Aplikasi Client server ini akan berfungsi dengan spesifikasi :
+Server :
+Komputer dengan spesifikasi hardware minimal sebagai berikut :
+Processor Intel Pentium 4 3 Ghz
+
+Motherboard support internet connection 2 GB RAM
+
+500 GB Hard Disk Drive utama 500 GB Hard Disk Drive backup VGA Card 256 MB
+
+NIC FastEthernet atau Gigabit Ethernet Mouse
+
+Keyboard Monitor
+Power Supply
+
+Komputer yang minimal telah terinstall software sebagai berikut :
+
+Browser Google Chrome/Mozilla Firefox PDF reader
+
+Word Processor
+
+Apache HTTP Server Mail Server
+
+DBMS (Database Management System) minimal MySQL 5.0.20 ke atas Koneksi internet dengan bandwidth minimal 1 Mbps OS minimal Windows 2003 Server atau Ubuntu Server
+
+
+Program Studi Teknik Informatika	SKPL-06	Halaman 10 dari 23 halaman
+ 
+Client :
+Komputer dengan spesifikasi hardware minimal sebagai berikut :
+Processor Intel Pentium 4 2 Ghz
+
+Motherboard support internet connection
+1 GB RAM
+
+80 GB Hard Disk Drive VGA Card 64 MB
+
+Mouse
+
+Keyboard Monitor
+Power Supply
+
+Komputer yang minimal telah terinstall software sebagai berikut :
+
+Browser Google Chrome/Mozilla Firefox PDF reader
+
+Koneksi internet dengan bandwidth minimal 128 Kbps OS minimal Windows XP ke atas atau Ubuntu 7.04 ke atas
+
+3	Deskripsi Kebutuhan
+
+3.1	Kebutuhan Antarmuka Eksternal
+
+Sistem Pencarian Orang dan Barang Hilang membutuhkan fasilitas-fasilitas antar muka eksternal sebagai berikut :
+
+3.1.1	Antarmuka pemakai
+
+User interface yang digunakan untuk mengoperasikan Sistem Pencarian Orang dan Barang Hilang antara lain :
+	Tampilan awal web
+Tampilan form pengisian data diri pelapor
+Tampilan form pengisian data orang hilang
+Tampilan form pengisian data barang hilang
+
+Alat-alat yang mendukung antarmuka pemakai adalah sebagai berikut. Keyboard
+
+Mouse Monitor
+
+3.1.2	Antarmuka Perangkat Keras
+
+Antarmuka perangkat keras yang digunakan untuk mengoperasikan perangkat lunak antara lain :
+
+
+3.1.3	Antarmuka Perangkat Lunak
+
+Antarmuka perangkat lunak yang digunakan oleh perangkat lunak ini adalah sebagai berikut :
+
+
+Program Studi Teknik Informatika	SKPL-06	Halaman 11 dari 23 halaman
+
+ 
+3.1.4	Antarmuka Komunikasi
+
+Antarmuka komunikasi yang digunakan untukmengoperasikanperangkat lunak antara
+lain :
+
+
+3.2	Kebutuhan Fungsional
+
+Tabel 4 Kebutuhan fungsional
+ID	Kebutuhan		Penjelasan
+SRS-F-	Perangkat lunak dapat menampilkan form pengisian data diri pelapor	Pengguna aplikasi harus melakukan pengisian data diri pelapor sebelum melaporkan 
+OUT-001			
+			
+SRS-F-	Perangkat lunak dapat menampilkan form pengisian data orang hilang	Form pengisian data orang hilang ditampilkan saat pengguna akan melakukan pencarian orang hilang
+OUT-002			
+			
+SRS-F-IN-	Perangkat lunak dapat menampilkan form pengisian data barang hilang 	Form pengisian data barang hilang ditampilkan saat pengguna akan melakukan pencarian barang hilang
+003			
+			
+SRS-F-PR-	Perangkat lunak dapat menampilkan data orang atau barang 	Data orang atau barang hilang yang dilaporkan pengguna aplikasi bisa dilihat oleh admin
+004			
+			
+			
+			
+SRS-F-	Perangkat lunak dapat menampilkan pesan berupa	Setelah perangkat lunak menghitung
+OUT-005	harga total yang harus dibayarkan		harga total yang harus dibayar pembeli,
+			perangkat lunak menampilkan informasi
+			tersebut
+SRS-F-PR-	Perangkat lunak dapat menyediakan mode pencarian	Untuk memilih produk, pengguna dapat
+006	terhadap produk, sesuaidengan input dari pembeli	menggunakan mode pencarian yang
+			terdapat pada perangkat lunak
+SRS-F-IN-	Perangkat lunak dapat menerima masukan username	Username dan password yang
+007	dan password pembeli		dimasukkan pembeli harus dapat
+			diterima oleh perangkat lunak
+SRS-F-	Perangkat lunak dapat menampilkan katalog	Katalog memiliki informasi nama
+OUT-008			produk, kategori produk, harga produk,
+			dan jumlah produk yang tersedia
+SRS-F-PR-	Perangkat lunak dapat menghitung jumlah uang yang	Setelah pembeli memilih produk beserta
+009	harus dibayarkan oleh pembeli		jumlahnya, perangkat lunak melakukan
+			pengitungan jumlah uang yang harus
+			dibayarkan oleh pembeli
+SRS-F-PR-	Perangkat lunak dapat menyimpan data pemesanan	Data pemesanan yang terjadi dapat
+010			disimpan oleh perangkat lunak
+SRS-F-PR-	Perangkat lunak dapat menyimpan data katalog	Data katalog yang diperbaharui oleh
+011			admin dapat disimpan oleh perangkat
+			lunak
+SRS-F-	Perangkat lunak dapat menampilkan form	Pengguna dapat memilih metode
+OUT-012	pembayaran		pembayaran untuk melakukan
+			pembayaran produk
+SRS-F-IN-	Perangkat lunak dapat menerima masukan berupa	Pembeli yang melakukan pemesanan
+013	produk yang dipesan pembeli beserta jumlahnya	akan memasukkan data produk yang
+			ingin dipesan beserta jumlahnya,
+			sehingga data tersebut dapat diterima
+			oleh perangkat lunak
+SRS-F-	Perangkat lunak dapat mengirimkan notifikasi	Setelah uang pembayaran diterima,
+OUT-014	pembayaran kepada pembeli		konfirmasi pembayaran akan dikirim
+			melalui e-mail oleh perangkat lunak
+Program Studi Teknik Informatika	SKPL-04	Halaman 12 dari 23 halaman
+
+
+ 
+ID	Kebutuhan	Penjelasan
+SRS-F-	Perangkat lunak dapat mengirimkan notifikasi	Saat monster corporation tidak memliki
+OUT-015	permintaan produk kepada pemasok	stok barang, maka perangkat lunak akan
+		mengirimkan notifikasi permintaan
+		produk kepada pemasok
+SRS-F-	Perangkat lunak dapat mengirimkan notifikasi	Setelah uang pembayaran diterima,
+OUT-016	pengiriman barang kepada jasa kurir	permintaan pengiriman barang kepada
+		pembeli akan dikirimkan kepada jasa
+		kurir
+SRS-F-IN-	Perangkat lunak dapat memperbaharui katalog	Admin dapat melakukan pembaharuan
+017		data katalog melalui perangkat lunak
+		yang dibuat
+SRS-F-	Perangkat lunak dapat menampilkan form pembelian	Pembeli yang melakukan pemesanan
+OUT-018	produk	barang dilayani oleh perangkat lunak
+		dengan form pembelian produk
+SRS-F-	Perangkat lunak dapat menampilkan form entri	Apabila ada permintaan pembaharuan
+OUT-0	katalog	data katalog, perangkat lunak
+		menampilkan form entri katalog
+SRS-F-	Perangkat lunak dapat menampilkan informasi	Perangkat lunak mengolah informasi
+OUT-020	pemesanan dalam kurun waktu tertentu (harian,	pemesanan dan menampilkan hasil
+	mingguan, dan/atau bulanan) dalam bentuk tabel	pengolahan dalam bentuk tabel
+SRS-F-	Perangkat lunak dapat menampilkan informasi	Perangkat lunak mengolah informasi
+OUT-021	pemesanan dalam kurun waktu tertentu (harian,	pemesanan dan menampilkan hasil
+	mingguan, dan/atau bulanan) dalam bentuk grafik	pengolahan dalam bentuk grafik
+SRS-F-PR-	Perangkat lunak dapat meng-generate laporan	Apabila ada permintaan laporan
+022	pertanggungjawaban	pertanggungjawaban, perangkat lunak
+		akan meng-generate laporan
+		pertanggungjawaban
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Program Studi Teknik Informatika	SKPL-06	Halaman 13 dari  halaman
+
+ 
+3.2.1	Diagram Konteks
+
+3.2.2	DFD Level 1
+
+3.2.2.1 DFD Level 2 <Proses pengisian data diri pelapor>
+3.2.2.2 DFD Level 2 <Proses pengisian data orang hilang >
+3.2.2.3 DFD Level 2 <Proses Pengisian orang hilang>
+3.2.2.4 DFD Level 2 <Proses Pengiriman notifikasi>
+
+3.2.2.5 DFD Level 2 <Proses mengubah status>
+3.2.2.6 DFD Level 2 <Proses melihat data orang dan barang hilang>
+3.2.3  Spesifikasi Proses (P-SPEC)		
+Tabel 5 Spesifikasi Proses		
+Kode buble		Deskripsi	
+DFD-0-1	Proses ini merupakan gambaran sistem secara keseluruhan. Melibatkan terminator serta data flow
+	yang keluar-masuk kedalam sistem. Buble 0 akan dideskripsikan pada DFD level selanjutnya
+	agar bisa memberikan gambaran secara lebih rinci dan spesifik.
+DFD-1-1	Terminator  yang  dapat  melakukan  pilihan  input  adalah  pembeli  dan  admin,  karena  kedua
+	terminator  ini  merupakan  pengguna  aktif  yang  dapat  berinteraksi  dengan  user.  Proses
+	mengeluarkan output sesuai dengan pilihan user, yang akan meneruskan data flow pada proses
+	yang sesuai dengan pilihan user.		
+DFD-1-2	Proses ini akan terjadi ketika user memilih menu pilihan pendaftaran. User yang belum terdaftar
+	dapat  melakukan registrasi  sehingga  data  hasil  registrasi  tersebut  akan  tersimpan  pada  data
+	pembeli		
+DFD-1-3	Pembeli yang telah terdaftar dapat melihat katalog yang disediakan dari data katalog. proses ini
+	menerima input dari data pembeli agar mampu memvalidasi apakah user yang sedang aktif
+	merupakan pembeli atau tidak. Selain itu admin dapat melakukan piihan untuk melakukan update
+	katalog. Data yang telah di update akan disimpan pada data katalog.
+DFD-1-4	Proses in menerima data flow berupa Pil_Beli dan Pil_Pencarian. Proses ini memerlukan data
+	store dan data katalog agar bsia melakukan proses pemesanan. Setelah keluar dari proses ini,
+	akan didapatkan data pesanan(mulai dari nama barang, jumlahnya, total harga dll)
+DFD-1-5	Pembeli harus melalui tahap pembayaran agar barang yang	dipesan bisa dikirimkan . Proses ini
+	menerima konfirmasi pembayaran dari bank, serta konfirmasi pengiriman dari kurir. Selain itu,
+	proses ini akan mengeluarkan data form pembayaran yang akan digunakan oleh bank, serta
+	permintaan pengiriman kepada pemasok.		
+DFD-1-6	Ketika suatu produk habis, maka software akan mengirimkan input berupa pilihan permintaan
+Program Studi Teknik Informatika	SKPL-04	Halaman 18 dari 23 halaman
+
+
+Template dokumen ini dan informasi yang dimilikinya adalah milik Program Studi Teknik Informatika-STEI-ITB dan bersifat rahasia. Dilarang me-reproduksi dokumen ini tanpa diketahui oleh Program Studi Teknik Informatika STEI ITB.
+ 
+produk, sehingga terjadilah proses permintaan produk. Output dari proses ini adalah data permintaan produk.
+
+DFD-1-7	Proses ini menerima input pilihan laporan yang dikirim oleh admin, kemudian melakukan proses generate laporan sehingga admin bisa mendapatkan laporan untuk dilaporkan kepada manajer.
+
+DFD-2-2.1	Proses ini dibuat agar bsia memenuhi spesifikasi user requirment yang kami buat. Apabila pengguna memilih menu daftar, maka sistem akan meminta masukan kepada pembeli berupa data apa saja yang dibutuhkan. Oleh karena itu output dari proses ini berupa data form yang akan diisi oleh pembeli
+
+DFD-2-2.2	Data form yang telah ditampilkan harus diisi oleh pengguna. Apabila telah tervalidasi, maka status pengguna akan naik menjadi pembeli. Disini data pembeli akan disimpan pada suata data store
+
+DFD-2-2.3	Apabila user telah terdaftar, maka user cukup melakukan login sebagai pembeli. Proses ini merupakan proses pengecekan terhadap seorang user.
+
+DFD-2-3.1 Pembeli dapat melihat data katalog yang tersedia DFD-2-3.2 Admin dapat melakukan update pada katalog
+
+DFD-2-4.1	Apabila pembeli memilih menu Pil_Beli, maka pembeli dapat memilih barang yang ingin dipesan. Keluaran dari proses ini berupa data pesanan (Id barang, nama barang, jumlah serta total harga yang harus dibayarkan)
+
+
+DFD-2-4.2	Proses pencarian produk dapat dipilih oleh pembeli. Software akan menampilkan data produk sesuai kriteria yang diinginkan pembeli.
+
+
+DFD-2-5.1	Proses ini transefer uang dilakukan di luar sistem. Transfer uang dalam proses ini diartikan sebagai input jumlah uang yang sesuai dengan data pemesanan.
+
+
+DFD-2-5.2	Proses ini menerima input data proses 5.1. Pada bagian ini akan dilakukan pengisian form pembayaran oleh user yang datanya akan dipakai oleh pihak bank. Proses ini juga akan mengirimkan status kelunasan pembayaran.
+
+
+DFD-2-5.3	Proses akan menerima konfirmasi_pembayaran dari Bank, apabila telah terbukti lunas, maka proses akan mengirimkan permintaan pengiriman barang pada kurir. Setelah melakukan pengiriman, kurir wajib melakukan akses ke sistem dan mengirimkan bahwa barang telah sampai pada pembeli.
+
+
+DFD-2-6.1	Ketika admin memilih pil_reqproduk, maka pada proses ini akan ditampilkan produk yang kosong.
+
+
+DFD-2-6.2	Apabila kondisi memungkinkan, admin mempunyai hak untuk melakukan pemesanan produk. Proses ini menerima input Data_Produk kosong yang dihasilkan pada proses 6.1, kemudian memberikan output data_permintaan produk
+
+DFD-2-7.1	Untuk mengirimkan laporan ke manajer, admin memiliki hak akses untuk mencetak laporan.
+Data ini diperoleh dari data store yang terkait dengan pemesanan.
+
+
+DFD-2-7.2	Admin dapat melakukan Pil_infoPemesanan untuk mendapatkan grafik dan data pemesanan produk yang berupa tabel.
+
+
+
+3.2.4	Data Store
+
+Tabel 6 Data Store
+Data Store		Deskripsi		
+		
+Data_pembeli	Berisi deskripsi pembeli yang telah melakukan registrasi. Sepeti nama,	
+	no.handphone, email serta alamat pembeli	
+Data_pemesanan	Ketika user selesai melakukan pencarian dan melakukan pemesanan,	
+	maka  data  pemesanan  tersebut  akan  tersimpat  pada  data  store ini.	
+	Data_pemesanan akan digunakan oleh bank untuk melakukan validasi	
+	proses pembayaran			
+Produk	Produk  merupakan  database  yang  menyimpan  data  produk  beserta	
+	jumlah yang tersedia. Data ini digunakan sebagai input ketika proses	
+	permintaan produk ke pemasok.		
+Data_katalog	Berisi data yang mengelola data katalog. Menyimpan gambar dari	
+	produk, kategori produk, nama produk dll	
+Program Studi Teknik Informatika	SKPL-04	Halaman  dari 23 halaman
+
+ 
+3.3	Kebutuhan Data
+
+3.3.1	E-R diagram
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gambar 10. Diagram ER
+
+
+3.4	Kebutuhan Non Fungsional
+
+Kebutuhan non fungsional yang terdapat pada perangkat lunak Super Monster Mall antara lain.
+
+Tabel 7 Kebutuhan non fungsional
+ID	Parameter	Kebutuhan		
+SRS-NF-OUT-023	Availability	Perangkat Lunak harus terus dapat beroperasi 7 hari	
+		perminggu, 24 jam per hari tanpa gagal	
+SRS-NF-PR-024	Reliability	Kegagalan dalam proses transaksi memiliki toleransi satu	
+		kali gagal dalam satu minggu	
+SRS-NF-OUT-025	Ergonomy	Tampilan antarmuka web Super Monster Mall mudah	
+		dipahami user dan estetikanya bagus	
+SRS-NF-PR-026	Portability	Perangkat Lunak dapat dipakai di platofrm Windows dan	
+		Linux		
+	Memory	N/A		
+SRS-NF-PR-027	Response time	Perangkat Lunak mampu mengirimkan notifikasi e-mail	
+		kepada pengguna maksimal dalam waktu 30 detik	
+SRS-NF-PR-028	Response time	Perangkat Lunak mampu melakukan update data dalam	
+		waktu 5 detik		
+	Safety	N/A		
+SRS-NF-PR-029	Security	Perangkat lunak menggunakan standar enkripsi HTTPS	
+Program Studi Teknik Informatika	SKPL-04	Halaman 20 dari 23 halaman
+
+Template dokumen ini dan informasi yang dimilikinya adalah milik Program Studi Teknik Informatika-STEI-ITB dan bersifat rahasia. Dilarang me-reproduksi dokumen ini tanpa diketahui oleh Program Studi Teknik Informatika STEI ITB.
+ 
+ID	Parameter	Kebutuhan
+SRS-NF-IN-030	Security	Perangkat lunak menolak input pengguna yang akan
+		mendaftarkan diri dengan password kurang dari 8
+		karakter
+		
+SRS-NF-OUT-031	Others 1: Bahasa	Semua tanya jawab ataupun tulisan dalam antarmuka
+	komunikasi	disediakan dalam bahasa Indonesia dan bahasa Inggris
+		
+SRS-NF-OUT-032	Others 2 : Tampilan	Setiap layer harus mengandung logo Monster’s
+	Logo Perusahaan	Corporation
+		
+
+
+3.5	Batasan Perancangan
+
+Batasan perancangan yang dipakai dalam pengembangan perangkat lunak Super Monster Mall antara lain.
+
+Tampilan web dibuat dengan menggunakan photoshop dan corel draw Text editor yang digunakan adalah sublime text dan/atau notepad++ Bahasa pemrograman yang digunakan adalah Java
+
+3.6	Kerunutan (traceability)
+
+Suatu perangkat lunak yang baik memiliki kebutuhan fungsional yang dapat dirunut model analisisnya. Berikut ini adalah tabel yang berisi traceability dari hasil analisis kebutuhan perangkat lunak yang dibangun.
+
+
+3.6.1	Kebutuhan Fungsional vs Proses
+
+Mapping kebutuhan fungsional dengan proses pada DFD untuk perangkat lunak Super Monster Mall adalah sebagai berikut.
+
+Tabel 8 Kebutuhan Fungsional vs proses
+ID Kebutuhan Fungsional	Nomor Proses pada DFD		
+SRS-F-OUT-001	DFD-2-2.1			
+SRS-F-OUT-002	DFD-2-2.2			
+SRS-F-IN-003	DFD-2-2.3			
+SRS-F-PR-004	DFD-2-2.3			
+SRS-F-OUT-005	DFD-2-5.1, DFD-2-5.2		
+SRS-F-PR-006	DFD-2-5.3			
+SRS-F-IN-007	DFD-2-2.3			
+SRS-F-OUT-008	DFD-2-3.1			
+SRS-F-PR-009	DFD-2-5.1, DFD-2-5.2		
+SRS-F-PR-010	DFD-2-4.2			
+SRS-F-PR-011	DFD-2-3.2			
+SRS-F-OUT-012	DFD-2-5.1, DFD-2-5.2		
+SRS-F-IN-013	DFD-2-4.2, DFD-2-4.1		
+SRS-F-OUT-014	DFD-2-5.3			
+SRS-F-OUT-015	DFD-1-6, DFD-2-6.1, DFD-2-6.2		
+SRS-F-OUT-016	DFD-2-5.3			
+SRS-F-IN-017	DFD-2-3.2			
+SRS-F-OUT-018	DFD-2-4.1			
+SRS-F-OUT-0	DFD-2-3.2			
+SRS-F-OUT-020	DFD-2-7.2			
+SRS-F-OUT-021	DFD-2-7.2			
+SRS-F-PR-022	DFD-2-7.1			
+Program Studi Teknik Informatika	SKPL-04	Halaman 21 dari 23 halaman
+
+Template dokumen ini dan informasi yang dimilikinya adalah milik Program Studi Teknik Informatika-STEI-ITB dan bersifat rahasia. Dilarang me-reproduksi dokumen ini tanpa diketahui oleh Program Studi Teknik Informatika STEI ITB.
+ 
+3.6.2	Data Store vs E-R
+
+Mapping data store pada DFD dengan Entity –Relasi untuk perangkat lunak Super Monster Mall adalah sebagai berikut :
+
+Tabel 9 Data Store vs E-R
+Data Store	Entity	Relasi
+		
+Data_pembeli	Pelanggan	-
+Data_pemesanan	Pelanggan, Pemesanan,Baris	pemesannya, terdiri_dari,
+	pemesanan, Produk, Kategori	produknya, dalam_kategori
+		
+Produk	Produk, Kategori	produknya, dalam_kategori
+Data_katalog	Produk, Kategori	produknya, dalam_kategori
+		
+
+3.7	Ringkasan Kebutuhan
+
+Perangkat lunak yang dibuat memiliki dua jenis kebutuhan, yaitu kebutuhan fungsional dan kebutuhan non fungsional.Kebutuhan ini mencerminkan semua hal yang harus dipenuhi, dan nantinya akan menjadi arahan untuk tahapan testing, karena pada dasarnya, semua kebutuhan harus dapat ditest. Berikut ini ringkasan semua kebutuhan perangkat lunak Super Monster Mall.
+
+
+3.7.1	Kebutuhan Fungsional
+
+Tabel 10 Kebutuhan Fungsional
+ID	Deskripsi
+SRS-F-OUT-001	Perangkat lunak dapat menampilkan form sign in
+SRS-F-OUT-002	Perangkat lunak dapat menampilkan form entri pendaftaran
+SRS-F-IN-003	Perangkat lunak dapat menerima masukan dari pengguna, berupa data pembeli
+SRS-F-PR-004	Perangkat lunak dapat menyimpan data pembeli
+SRS-F-OUT-005	Perangkat lunak dapat menampilkan pesan berupa harga total yang harus dibayarkan
+SRS-F-PR-006	Perangkat lunak dapat menyediakan mode pencarian terhadap produk, sesuai dengan
+	input dari pembeli
+SRS-F-IN-007	Perangkat lunak dapat menerima masukan username dan password pembeli
+SRS-F-OUT-008	Perangkat lunak dapat menampilkan katalog
+SRS-F-PR-009	Perangkat lunak dapat menghitung jumlah uang yang harus dibayarkan oleh pembeli
+SRS-F-PR-010	Perangkat lunak dapat menyimpan data pemesanan
+SRS-F-PR-011	Perangkat lunak dapat menyimpan data katalog
+SRS-F-OUT-012	Perangkat lunak dapat menampilkan form pembayaran
+SRS-F-IN-013	Perangkat lunak dapat menerima masukan berupa produk yang dipesan pembeli beserta
+	jumlahnya
+SRS-F-OUT-014	Perangkat lunak dapat mengirimkan notifikasi pembayaran kepada pembeli
+SRS-F-OUT-015	Perangkat lunak dapat mengirimkan notifikasi permintaan produk kepada pemasok
+SRS-F-OUT-016	Perangkat lunak dapat mengirimkan notifikasi pengiriman barang kepada jasa kurir
+SRS-F-IN-017	Perangkat lunak dapat memperbaharui katalog
+SRS-F-OUT-018	Perangkat lunak dapat menampilkan form pembelian produk
+SRS-F-OUT-0	Perangkat lunak dapat menampilkan form entri katalog
+SRS-F-OUT-020	Perangkat lunak dapat menampilkan informasi pemesanan dalam kurun waktu tertentu
+	(harian, mingguan, dan/atau bulanan) dalam bentuk tabel
+SRS-F-OUT-021	Perangkat lunak dapat menampilkan informasi pemesanan dalam kurun waktu tertentu
+	(harian, mingguan, dan/atau bulanan) dalam bentuk grafik
+SRS-F-PR-022	Perangkat lunak dapat meng-generate laporan pertanggungjawaban
+
+
+
+
+
+
+
+Program Studi Teknik Informatika	SKPL-04	Halaman 22 dari 23 halaman
+
+Template dokumen ini dan informasi yang dimilikinya adalah milik Program Studi Teknik Informatika-STEI-ITB dan bersifat rahasia. Dilarang me-reproduksi dokumen ini tanpa diketahui oleh Program Studi Teknik Informatika STEI ITB.
+ 
+3.7.2	Kebutuhan Non Fungsional
+
+Tabel 11 Kebutuhan Non Fungsional
+ID	Deskripsi
+SRS-NF-OUT-023	Perangkat Lunak harus terus dapat beroperasi 7 hari perminggu, 24 jam per hari tanpa
+	gagal
+SRS-NF-PR-024	Kegagalan dalam proses transaksi memiliki toleransi satu kali gagal dalam satu minggu
+SRS-NF-OUT-025	Tampilan antarmuka web Super Monster Mall mudah dipahami user dan estetikanya
+	bagus
+SRS-NF-PR-026	Perangkat Lunak dapat dipakai di platofrm Windows dan Linux
+SRS-NF-PR-027	Perangkat Lunak mampu mengirimkan notifikasi e-mail kepada pengguna maksimal
+	dalam waktu 30 detik
+SRS-NF-PR-028	Perangkat Lunak mampu melakukan update data dalam waktu 5 detik
+SRS-NF-PR-029	Perangkat lunak menggunakan standar enkripsi HTTPS
+SRS-NF-IN-030	Perangkat lunak menolak input pengguna yang akan mendaftarkan diri dengan
+	password kurang dari 8 karakter
+SRS-NF-OUT-031	Semua tanya jawab ataupun tulisan dalam antarmuka disediakan dalam bahasa
+	Indonesia dan bahasa Inggris
+SRS-NF-OUT-032	Setiap layer harus mengandung logo Monster’s Corporation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Program Studi Teknik Informatika	SKPL-04	Halaman 23 dari 23 halaman
+
+Template dokumen ini dan informasi yang dimilikinya adalah milik Program Studi Teknik Informatika-STEI-ITB dan bersifat rahasia. Dilarang me-reproduksi dokumen ini tanpa diketahui oleh Program Studi Teknik Informatika STEI ITB.
